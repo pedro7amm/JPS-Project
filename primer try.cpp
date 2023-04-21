@@ -5,17 +5,76 @@
 
 using namespace std;
 
-int numGana(){
+int genenarNum(int max){
 	srand(time(NULL));
-	int numPrem = rand() % 100;
-	return numPrem;
+	int num = rand() % max;
+	return num;
 }
-int serGana(){
+
+string generarPremio(int &bolDosmill,int &bolDosyMedmill,int &bolTresmill,int &bolCincomill,int &bolDiezmill,int &bolQuinmill,int &bolAcu){
 	srand(time(NULL));
-	int serPrem = rand() % 1000;
-	return serPrem;
-}
+	int opcion = genenarNum(7);
+	string respPrem;
+	cout<<opcion<<endl;
 	
+	if (opcion==0 && bolDosmill!=0){
+		respPrem="El premio es de 2.000.000";
+		bolDosmill--;
+	}
+	else{
+		genenarNum(7);
+	}
+	
+	if(opcion==1 && bolDosyMedmill!=0){
+		respPrem="El premio es de 2.500.000";
+		bolDosyMedmill--;
+	}
+	else{
+		genenarNum(7);
+	}
+	
+	if(opcion==2 && bolTresmill!=0){
+		respPrem="El premio es de 3.000.000";
+		bolTresmill--;
+	}
+	else{
+		genenarNum(7);
+	}
+	
+	if(opcion==3 && bolCincomill!=0){
+		respPrem="El premio es de 5.000.000";
+		bolCincomill--;
+	}
+	else{
+		genenarNum(7);
+	}
+	
+	if(opcion==4 && bolDiezmill!=0){
+		respPrem="El premio es de 10.000.000";
+		bolDiezmill--;
+	}
+	else{
+		genenarNum(7);
+	}
+	
+	if(opcion==5 && bolQuinmill!=0){
+		respPrem="El premio es de 15.000.000";
+		bolQuinmill--;
+	}
+	else{
+		genenarNum(7);
+	}
+	
+	if(opcion==6 && bolAcu!=0){
+		respPrem="El premio es el Acumulado";
+		bolAcu--;
+	}
+	else{
+		genenarNum(7);
+	}
+	
+	return respPrem;
+}
 
 
 	
@@ -41,14 +100,13 @@ int main() {
 	for(int i=1;i<=21;i++){
 		int bolExt= bolDosmill+bolDosyMedmill+bolTresmill+bolCincomill+bolDiezmill+bolQuinmill;
 		
-		
-		
 		cout<<"El numero de sorteo de acumulado es "<<numSortAcu<<" y el numero de sorteo de loteria es "<<numSortLot<<endl;
 		cout<<endl;
 		cout<<"El monto del acumulado esta en: "<<montoAcu<<" millones"<<endl;
 		cout<<"Bolitas de acumulado: "<<bolAcu<<" y bolitas de premios extra: "<<bolExt<<endl;
 		cout<<endl;
-		cout<<"El número ganador es "<<numGana()<<" y la serie es "<<serGana()<<endl;
+		cout<<"El número ganador es "<<genenarNum(100)<<" y la serie es "<<genenarNum(1000)<<endl;
+		cout<<generarPremio(bolDosmill,bolDosyMedmill,bolTresmill,bolCincomill,bolDiezmill,bolQuinmill,bolAcu);
 		cout<<endl;
 		numSortAcu++;
 		numSortLot++;
@@ -57,12 +115,7 @@ int main() {
 		cout<<endl;
 		cout<<"Ingrese su opción:  ";
 		cin>>opcMenu;
-		//Validación del Acumulado
-		if (bolAcu==0){
-			cout<<"Ya salió el acumulado, gracias por participar ";
-			system("CLS()");
-			break;
-		}
+		
 			
 		//Aumento del monto de Acumulado por sorteo
 		if (i<11){
@@ -80,7 +133,7 @@ int main() {
 			cout<<"Muchas gracias por participar.";
 			break;
 		}
-		
+//
 		
 	}
 	
