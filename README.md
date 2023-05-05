@@ -3,6 +3,4 @@ This is a project about JPS lottery, game "Accumulated and extra prizes", The pr
 winner per each time played and you have the possibility to win the big prize every round, if round's number is 21 the big prize will be given to 60 winners 
 and after that all values will be reset.
 
-Developers:
-Pedro Meléndez 
-Jimena Rivera
+Developers: Pedro Meléndez & Jimena Rivera
